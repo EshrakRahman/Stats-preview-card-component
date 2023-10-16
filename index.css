@@ -1,7 +1,7 @@
 :root {
     --primary-dark-blue-mbg: hsl(233, 47%, 7%);
     --primary-dark-desaturated-blue-card-bg: hsl(244, 38%, 16%);
-    --primay-soft-violet-ac: hsl(277, 64%, 61%);
+    --primay-soft-violet-ac: hsla(277, 64%, 61%, .62);
 
     --neutarl-white: hsl(0, 0%, 100%);
     --neutral-slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
@@ -35,24 +35,85 @@ main {
     height: 400px;
     background-color: var(--primary-dark-desaturated-blue-card-bg);
     margin: 0 auto;
+    /*border-radius: 10px;*/
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 main .card {
     display: grid;
-    grid-template-columns: 1.2fr .8fr;
+    grid-template-columns: 2fr 1.6fr;
     color: var(--neutarl-white);
+
+    /*width: 80%;*/
 }
 .col-left {
     padding: 50px;
-
 }
 .col-left .title {
     font-size: 2.5rem;
     width: 90%;
     font-family: var(--font-family-primary);
     font-weight: 700;
+    margin-bottom: 30px;
 }
 
 .col-left .title span {
     color: var(--primay-soft-violet-ac);
+}
+
+.col-left .description {
+    width: 80%;
+    color: var(--neutral-slightly-transparent-white);
+    font-family: var(--font-family-primary);
+    margin-bottom: 60px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    /*padding: 0 40px;*/
+    padding-right: 40px;
+    width: 80%;
+}
+.stat-num {
+    font-family: var(--font-family-secondary);
+    text-transform: uppercase;
+    color: var(--neutarl-white);
+    font-size: 1.8rem;
+}
+.stat-name {
+    font-family: var(--font-family-secondary);
+    text-transform: uppercase;
+    color: var(--neutral-slightly-transparent-white-heading);
+    font-size: .8rem;
+}
+
+
+.img-wrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.img-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primay-soft-violet-ac);
+    pointer-events: none;
+    /*z-index: 2;*/
+}
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /*z-index: 1;*/
+
 }
