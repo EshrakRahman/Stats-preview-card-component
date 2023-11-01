@@ -117,3 +117,52 @@ main .card {
     /*z-index: 1;*/
 
 }
+
+/* Media queries */
+
+@media screen and (max-width: 385px){
+    main {
+        height: 100%;
+        margin-top: 25px;
+        padding: 0 25px;
+        width: 100%;
+    }
+
+    main .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+    }
+    .card .col-left {
+        padding: 0;
+    }
+    .card .col-left .title {
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        margin: 30px 0;
+    }
+    .card .col-left .description {
+        width: 90%;
+        text-align: center;
+        margin: 30px auto;
+        line-height: 1.8rem;
+    }
+    .card .col-left .stats {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 30px;
+        width: 100%;
+        padding: 0;
+    }
+    .card .col-right {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .card .col-right .img-wrapper {
+        height: 100%;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 0;
+    }
+}
